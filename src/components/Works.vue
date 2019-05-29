@@ -18,6 +18,7 @@
             div.column.card
 
         //モーダルコンポーネント
+        //Thumbs Gallery With Loop Mode
         //div.modal
         ModalItem(v-on:close="closeModal" v-if="modal")
             //img(:src="imgSrc")
