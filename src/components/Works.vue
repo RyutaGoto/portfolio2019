@@ -24,13 +24,16 @@
             //img(:src="imgSrc")
             div.swiper-container.gallery-top
                 div.swiper-wrapper
+                    div.swiper-slide(:style="{backgroundImage:'url(' + 'http://lorempixel.com/1200/1200/nature/10/' + ')' }")
+                        //img(:src="imgSrc")
                     div.swiper-slide
-                        img(:src="imgSrc")
-                    div.swiper-slide
+                        //(:style="{backgroundImage:'url(' + logoSrc + ')' }")
                         img(:src="motoSrc")
                     div.swiper-slide
+                        //(:style="{backgroundImage:'url(' + lampSrc + ')' }")
                         img(:src="lampSrc")
                     div.swiper-slide
+                        //(:style="{backgroundImage:'url(' + motoSrc + ')' }")
                         img(:src="landSrc")
                 div.swiper-button-next.swiper-button-white
                 div.swiper-button-prev.swiper-button-white
@@ -49,6 +52,7 @@
 <script>
     import Item from './Item.vue'
     import ModalItem from './ModalItem.vue'
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 
     export default {
@@ -67,13 +71,15 @@
         components: {
             Item,
             ModalItem,
+            swiper,
+            swiperSlide
         },
         methods: {
             openModal(temp){
                 this.modal = true
                 this.imgSrc = temp
                 //this.message = temp
-                //console.log(this.imgSrc)
+                console.log(this.imgSrc)
             },
             closeModal(){
                 this.modal = false
