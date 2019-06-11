@@ -3,13 +3,10 @@
         div.modal.modal-overlay(@click.self="$emit('close')")
             div.modal-window
                 div.modal-content
-                    p content
-                    //img(:src="imgSrc")
-                    slot
+                    slot(name="img")
                 footer.modal-footer
-                    p footer
                     //button(v-on:click="confirm(val)") 確認
-                    //slot#footer
+                    slot#footer(name="footer")
                         button(v-on:click="$emit('close')") Close
 </template>
 
@@ -53,7 +50,7 @@
 
         &-footer
             background: #ccc;
-            padding: 10px;
+            padding: 30px;
             text-align: right;
 
     //オーバーレイのトランジション

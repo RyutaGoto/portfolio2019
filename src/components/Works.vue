@@ -5,15 +5,15 @@
         //<Item/>
         //<Item/>
         div.columns
-            div.column.card(v-on:click="openModal(lampSrc)")
-                img.item(v-bind:src="lampSrc")
-            div.column.card(v-on:click="openModal(motoSrc)")
-                img.item(v-bind:src="motoSrc")
-            div.column.card(v-on:click="openModal(logoSrc)")
-                img.item(v-bind:src="logoSrc")
+            div.column.card(v-on:click="openModal(lamp.img, lamp.title, lamp.detail, lamp.skill)")
+                img.item(v-bind:src="lamp.img")
+            div.column.card(v-on:click="openModal(moto.img, moto.title, moto.detail, moto.skill)")
+                img.item(v-bind:src="moto.img")
+            div.column.card(v-on:click="openModal(logo.img, logo.title, logo.detail, logo.skill)")
+                img.item(v-bind:src="logo.img")
         div.columns
-            div.column.card(v-on:click="openModal(landSrc)")
-                img.item.column(v-bind:src="landSrc")
+            div.column.card(v-on:click="openModal(land.img, land.title, land.detail, land.skill)")
+                img.item.column(v-bind:src="land.img")
             div.column.card
             div.column.card
 
@@ -22,16 +22,20 @@
         //div.modal
         ModalItem(v-on:close="closeModal" v-if="modal")
             //img(:src="imgSrc")
-            carousel(:perPage="1" style="margin-top:0.4rem;" :navigationEnabled="true" )
-                slide
-                    span.label
-                        img(:src="imgSrc")
-                slide
-                    span.label
-                        img(:src="logoSrc")
-                slide
-                    span.label
-                        img(:src="landSrc")
+            template(slot="img")
+                carousel(:perPage="1" style="margin-top:0.4rem;" :navigationEnabled="true" )
+                    slide
+                        span.label
+                            img(:src="imgSrc")
+                    slide
+                        span.label
+                            img(:src="logoSrc")
+                    slide
+                        span.label
+                            img(:src="landSrc")
+            template(slot="footer")
+                p.title {{ titleSrc }}
+                    p.detail {{ detailSrc }}
 </template>
 
 <script>
@@ -50,10 +54,33 @@
                 next:"next",
                 prev:"prev",
                 imgSrc: require('./images/moto.png'),
-                logoSrc: require('./images/logo_clear(250×250).png'),
-                motoSrc: require('./images/moto.png'),
-                lampSrc: require('./images/lamp_2.png'),
-                landSrc: require('./images/land.png'),
+                titleSrc: '',
+                detailSrc: '',
+                skillSrc: '',
+                logo:{
+                    img: require('./images/logo_clear(250×250).png'),
+                    title: 'RyutaGotoのロゴマーク',
+                    detail: '',
+                    skill: '',
+                },
+                moto:{
+                    img: require('./images/moto.png'),
+                    title: 'Moto Fonts',
+                    detail: '',
+                    skill: '',
+                },
+                lamp:{
+                    img: require('./images/lamp_2.png'),
+                    title: '光る電源タップ',
+                    detail: '',
+                    skill: '',
+                },
+                land:{
+                    img: require('./images/land.png'),
+                    title: '函館市都市景観章のロゴマーク',
+                    detail: '',
+                    skill: '',
+                },
             };
         },
         components: {
@@ -65,9 +92,12 @@
             Slide,
         },
         methods: {
-            openModal(temp){
+            openModal(imgTemp, titleTemp, detailTemp, skillTemp){
                 this.modal = true
-                this.imgSrc = temp
+                this.imgSrc = imgTemp
+                this.titleSrc = titleTemp
+                this.detailSrc = detailTemp
+                this.skillSrc = skillTemp
                 //this.message = temp
                 console.log(this.imgSrc)
             },
@@ -99,6 +129,10 @@
     
     .card
         padding: 0px 0px;
+
+    .title
+        font-size: 20px;
+        text-align: left;
     
     //vue-carouselの部分
     .VueCarousel
