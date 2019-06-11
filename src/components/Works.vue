@@ -22,37 +22,23 @@
         //div.modal
         ModalItem(v-on:close="closeModal" v-if="modal")
             //img(:src="imgSrc")
-            div.swiper-container.gallery-top
-                div.swiper-wrapper
-                    div.swiper-slide(:style="{backgroundImage:'url(' + 'http://lorempixel.com/1200/1200/nature/10/' + ')' }")
-                        //img(:src="imgSrc")
-                    div.swiper-slide
-                        //(:style="{backgroundImage:'url(' + logoSrc + ')' }")
-                        img(:src="motoSrc")
-                    div.swiper-slide
-                        //(:style="{backgroundImage:'url(' + lampSrc + ')' }")
-                        img(:src="lampSrc")
-                    div.swiper-slide
-                        //(:style="{backgroundImage:'url(' + motoSrc + ')' }")
-                        img(:src="landSrc")
-                div.swiper-button-next.swiper-button-white
-                div.swiper-button-prev.swiper-button-white
-            //div.swiper-container.gallery-thumbs
-                div.swiper-wrapper
-                    div.swiper-slide
+            carousel(:perPage="1" style="margin-top:0.4rem;" :navigationEnabled="true" )
+                slide
+                    span.label
                         img(:src="imgSrc")
-                    div.swiper-slide
-                        img(:src="motoSrc")
-                    div.swiper-slide
-                        img(:src="lampSrc")
-                    div.swiper-slide
-                        img(:src="landSrc")           
+                slide
+                    span.label
+                        img(:src="logoSrc")
+                slide
+                    span.label
+                        img(:src="landSrc")
 </template>
 
 <script>
     import Item from './Item.vue'
     import ModalItem from './ModalItem.vue'
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import { Carousel, Slide } from 'vue-carousel'
 
 
     export default {
@@ -61,6 +47,8 @@
             return{
                 modal: false,
                 message: '',
+                next:"next",
+                prev:"prev",
                 imgSrc: require('./images/moto.png'),
                 logoSrc: require('./images/logo_clear(250×250).png'),
                 motoSrc: require('./images/moto.png'),
@@ -72,7 +60,9 @@
             Item,
             ModalItem,
             swiper,
-            swiperSlide
+            swiperSlide,
+            Carousel,
+            Slide,
         },
         methods: {
             openModal(temp){
@@ -109,32 +99,51 @@
     
     .card
         padding: 0px 0px;
+    
+    //vue-carouselの部分
+    .VueCarousel
+        margin-left: 15%;
+        margin-right: 15%;
 
-    .swiper-container 
-      width: 100%;
-      height: 300px;
-      margin-left: auto;
-      margin-right: auto;
+    .VueCarousel-slide
+        position: relative;
+        background: white;
+        color: #fff;
+        font-family: Arial;
+        font-size: 24px;
+        text-align: center;
+        height: 300px;
+
+    .label
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, - 50%);
+
+    .header
+        text-align: center;
+        margin-bottom: 1px;
+        padding-top: 15px;
+        background: #fff;
+        height:  50px;
+        min-width: 100%;
+
+    .container
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
     
-    .swiper-slide
-      background-size: cover;
-      background-position: center;
-    
-    .gallery-top
-      height: 80%;
-      width: 100%;
-    
-    .gallery-thumbs
-      height: 20%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    
-    .gallery-thumbs .swiper-slide
-      height: 100%;
-      opacity: 0.4;
-    
-    .gallery-thumbs .swiper-slide-thumb-active
-      opacity: 1;
-    
+    .subtitle
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0 auto;
+        border-radius: 1.2rem;
+        color: #5ebaba;
+        border: 2px solid #5ebaba;
+        background: #ffffff;
+        line-height: 2.4rem;
+        padding: 0 1rem;
+        position: relative;
+        cursor: pointer;
     
 </style>
