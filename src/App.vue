@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Top/>
+    <div class="top_out">
+      <div class="top_in">
+        <Top/>
+      </div>
+    </div>
     <div class="works">
       <h2>Works</h2>
       <Works/>
@@ -26,6 +30,17 @@ export default {
 </script>
 
 <style>
+.top_out{
+  height: 100vh;
+  width: 100%;
+  display: table;
+}
+
+.top_in{
+  display: table-cell;
+  vertical-align: middle;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

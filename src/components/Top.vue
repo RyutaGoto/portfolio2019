@@ -1,7 +1,8 @@
 <template lang="pug">
     div.top
-        img(src="./images/logo.png")
-        h1 RyutaGoto's Portfolio
+        p 
+            img(src="./images/logo.png")
+            span RyutaGoto's Portfolio
 </template>
 
 <script>
@@ -15,6 +16,13 @@
 </script>
 
 <style lang="sass" scoped>
+    .top img
+        vertical-align: middle;
+        height: 150px;
+
+    .top span
+        vertical-align: middle;
+        font-size: 15pt;
 
 </style>
 
