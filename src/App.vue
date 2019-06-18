@@ -9,6 +9,10 @@
       <h2>Works</h2>
       <Works/>
     </div>
+    <div class="about">
+      <h2>About</h2>
+      <About/>
+    </div>
   </div>
 </template>
 
@@ -17,6 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import Top from './components/Top.vue'
 import Works from './components/Works.vue'
 import Item from './components/Item.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'App',
@@ -24,7 +29,8 @@ export default {
     HelloWorld,
     Top,
     Works,
-    Item
+    Item,
+    About,
   }
 }
 </script>
