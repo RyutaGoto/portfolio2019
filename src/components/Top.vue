@@ -1,7 +1,7 @@
 <template lang="pug">
     div.top
         p 
-            img(src="./images/logo.png")
+            img(src="./images/logo_top.png")
             span RyutaGoto's Portfolio
 </template>
 
@@ -18,12 +18,14 @@
 <style lang="sass" scoped>
     .top img
         vertical-align: middle;
-        height: 150px;
+        height: 200px;
+        margin-right: 20px;
 
     .top span
         vertical-align: middle;
-        font-size: 27pt;
-        color: #FFF6F6;
+        font-size: 30pt;
+        color: #DDDDDD;
+        margin-right: 20px;
 
 </style>
 

@@ -50,13 +50,14 @@
     .name h3
         margin: 5px;
         font-size: 22pt;
-        color: #5D5D5D;
+        color: #565656;
 
     .belong
         margin-top: 20px;    
 
     .belong p
         font-size: 14pt;
+        color: #565656;
         
     .skill
         margin-top: 20px;
@@ -64,11 +65,12 @@
 
     .skill p
         font-size: 14pt;
+        color: #565656;
 
     .footer
         padding: 2rem 1.5rem 2rem;
-        margin-top: 15vh;
-        background-color: #364F44;
+        margin-top: 12vh;
+        background-color: #325E35;
         color: #FFF5F5;
 
     .title-border

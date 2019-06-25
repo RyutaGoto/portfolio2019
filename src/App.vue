@@ -37,6 +37,7 @@ export default {
 
 <style>
 h2{
+  color: #585858;
   font-size: 30pt;
   margin-top: 15vh;
 }
@@ -45,7 +46,7 @@ h2{
   height: 100vh;
   width: 100%;
   display: table;
-  background-color: #39764C;
+  background-color: #325E35;
 }
 
 .top_in{
@@ -66,6 +67,6 @@ h2{
   color: #2c3e50;
   margin-top: 0px;
   padding: 0px 0px;
-  background-color: #FFF6F6;
+  background-color: #F0EFE8;
 }
 </style>
