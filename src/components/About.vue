@@ -31,7 +31,7 @@
 </script>
 
 <style lang="sass" scoped>
-    h2
+    .about h2
         color: #585858;
         font-size: 30pt;
         margin-top: 15vh;

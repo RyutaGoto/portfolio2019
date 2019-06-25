@@ -121,15 +121,16 @@
 
 
 <style lang="sass" scoped>
-    h2
-        color: #585858;
-        font-size: 30pt;
-        margin-top: 15vh;
-
     .works
         padding-top: 5vh;
         padding-right: 30vw;
         padding-left: 30vw;
+
+    .works h2
+        color: #585858;
+        font-size: 30pt;
+        margin-top: 10vh;
+        margin-bottom: 30px;
 
     //columnの部分
     .columns
