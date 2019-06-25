@@ -5,34 +5,25 @@
         //<Item/>
         //<Item/>
         div.columns
-            div.column.card(v-on:click="openModal(lamp.img, lamp.title, lamp.detail, lamp.skill)")
-                img.item(v-bind:src="lamp.img")
-            div.column.card(v-on:click="openModal(moto.img, moto.title, moto.detail, moto.skill)")
-                img.item(v-bind:src="moto.img")
-            div.column.card(v-on:click="openModal(logo.img, logo.title, logo.detail, logo.skill)")
-                img.item(v-bind:src="logo.img")
+            div.column(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
+                img.item.box(v-bind:src="lamp.img.thum")
+            div.column(v-on:click="openModal(moto.img.item, moto.title, moto.detail, moto.skill)")
+                img.item.box(v-bind:src="moto.img.thum")
+            div.column(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
+                img.item.box(v-bind:src="logo.img.thum")
         div.columns
-            div.column.card(v-on:click="openModal(land.img, land.title, land.detail, land.skill)")
-                img.item.column(v-bind:src="land.img")
-            div.column.card
-            div.column.card
+            div.column(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
+                img.item.box(v-bind:src="land.img.thum")
+            div.column
+            div.column
 
         //モーダルコンポーネント
-        //Thumbs Gallery With Loop Mode
-        //div.modal
         ModalItem(v-on:close="closeModal" v-if="modal")
-            //img(:src="imgSrc")
             template(slot="img")
                 carousel(:perPage="1" style="margin-top:0.4rem;" :navigationEnabled="true" )
-                    slide
+                    slide( v-for="i in imgSrc")
                         span.label
-                            img(:src="imgSrc")
-                    slide
-                        span.label
-                            img(:src="logoSrc")
-                    slide
-                        span.label
-                            img(:src="landSrc")
+                            img(:src="i")
             template(slot="footer")
                 p.title {{ titleSrc }}
                     p.detail {{ detailSrc }}
@@ -53,30 +44,42 @@
         data: function(){
             return{
                 modal: false,
-                imgSrc: require('./images/moto.png'),
+                imgSrc: [],
                 titleSrc: '',
                 detailSrc: '',
                 skillSrc: '',
                 logo:{
-                    img: require('./images/logo_clear(250×250).png'),
+                    img:{
+                        thum: require('./images/logo/logo_thumnail.jpg'),
+                        item: [require('./images/logo/logo_1.jpg'),],
+                    },
                     title: 'RyutaGotoのロゴマーク',
                     detail: '自分の名詞を作るときに「自身を構成しているものはなにか。」と考えたときに紙に走り書きし始めたことがきっかけで制作した。',
                     skill: 'Illustrator',
                 },
                 moto:{
-                    img: require('./images/moto.png'),
+                    img:{
+                        thum: require('./images/moto/moto_thumnail.jpg'),
+                        item: [require('./images/moto/moto_1.jpg'), require('./images/moto/moto_2.jpg'), require('./images/moto/moto_3.jpg'), require('./images/moto/moto_4.jpg'), require('./images/moto/moto_5.jpg'), require('./images/moto/moto_6.jpg')],
+                    },
                     title: 'Moto Fonts',
                     detail: '"no more tofu"をコンセプトにGoogleが2012年に開発したNoto Fontsを見て、"豆腐ってむしろ可愛い形しているし敬遠すべきではないのでは？"と考えた。これを受けて私は実際の文字化けの「豆腐」をベースに"more tofu"をコンセプトとしたMoto Fontsを制作した。最初のバージョンは24時間以内で発案からリリースまでを終えた。',
                     skill: 'Illustrator',
                 },
                 lamp:{
-                    img: require('./images/lamp_2.png'),
+                    img:{
+                        thum: require('./images/lamp/lamp_thumnail.jpg'),
+                        item: [require('./images/lamp/lamp_1.jpg'), require('./images/lamp/lamp_2.jpg'), require('./images/lamp/lamp_3.jpg'), require('./images/lamp/lamp_4.jpg'), require('./images/lamp/lamp_5.jpg'), require('./images/lamp/lamp_6.jpg'), require('./images/lamp/lamp_7.jpg'), require('./images/lamp/lamp_8.jpg'), require('./images/lamp/lamp_9.jpg'), ],
+                    },
                     title: '光る電源タップ',
                     detail: '私たちの日常は誰かからの恩恵や、自分を支えてくれる何かによって成り立っていることだろう。例えば蛇口をひねれば水が出たり、お金と引き換えに飲食物が提供されたりと…また、今回行う電子工作に欠かせない電気もその一つであると私は捉えた。このように私たちの日常を支えてくれるために当たり前のように存在しているものを軽視しないでほしいという思いを込めて「当たり前のことを当たり前に思わないように」をコンセプトに本作品の制作に取り組んだ。',
                     skill: 'Arduino 電子工作',
                 },
                 land:{
-                    img: require('./images/land.png'),
+                    img:{
+                        thum: require('./images/land/land_thumnail.jpg'),
+                        item: [require('./images/land/land_1.jpg'), require('./images/land/land_2.jpg'), ],
+                    },
                     title: '函館市都市景観章のロゴマーク',
                     detail: '函館市で行われている取り組みの1つに「都市景観賞」というものが存在する。このロゴマークは函館市の都市景観賞のweb制作に携わる一環で制作したものだ。この土地に住む人々の営みの様子を8の字のような循環として表した。色は函館山から見える町並みの色をイメージしながら設計した。',
                     skill: 'Illustrator',
@@ -122,14 +125,29 @@
 
 <style lang="sass" scoped>
     .works
-        padding: 50px;
+        padding-top: 5vh;
+        padding-right: 30vw;
+        padding-left: 30vw;
 
+    //columnの部分
+    .columns
+        //background-color: gray;   
     .column
-        margin: 10px;
-    
+        margin: 5px;
+        .item
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+
     .card
         padding: 0px 0px;
+        border: none;
 
+    .box
+        padding: 0;
+        box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+
+    //modalの部分
     .title
         font-size: 20px;
         text-align: left;
