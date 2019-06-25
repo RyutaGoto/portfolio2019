@@ -1,5 +1,6 @@
 <template lang="pug">
     div.about
+        h2 About
         div.prof
             img(src='./images/RyutaGoto.jpg')
         div.name
@@ -30,6 +31,11 @@
 </script>
 
 <style lang="sass" scoped>
+    h2
+        color: #585858;
+        font-size: 30pt;
+        margin-top: 15vh;
+    
     .prof img
         height: 18%;
         width: 18%;

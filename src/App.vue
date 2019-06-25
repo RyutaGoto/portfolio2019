@@ -6,11 +6,9 @@
       </div>
     </div>
     <div class="works">
-      <h2>Works</h2>
       <Works/>
     </div>
     <div class="about">
-      <h2>About</h2>
       <About/>
     </div>
   </div>
@@ -36,12 +34,6 @@ export default {
 </script>
 
 <style>
-h2{
-  color: #585858;
-  font-size: 30pt;
-  margin-top: 15vh;
-}
-
 .top_out{
   height: 100vh;
   width: 100%;

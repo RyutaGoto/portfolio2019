@@ -1,9 +1,6 @@
 <template lang="pug">
     div.works
-        //<Item/>
-        //<Item/>
-        //<Item/>
-        //<Item/>
+        h2 Works
         div.columns
             div.column(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
                 img.item.box(v-bind:src="lamp.img.thum")
@@ -124,6 +121,11 @@
 
 
 <style lang="sass" scoped>
+    h2
+        color: #585858;
+        font-size: 30pt;
+        margin-top: 15vh;
+
     .works
         padding-top: 5vh;
         padding-right: 30vw;
