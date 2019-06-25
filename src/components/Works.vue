@@ -27,7 +27,7 @@
             template(slot="footer")
                 p.title {{ titleSrc }}
                     p.detail {{ detailSrc }}
-                        p.skill {{ skillSrc }}
+                        p.skill スキル：{{ skillSrc }}
 </template>
 
 <script>
@@ -149,12 +149,18 @@
 
     //modalの部分
     .title
-        font-size: 20px;
+        font-size: 26px;
         text-align: left;
+        //margin-bottom: 3px;
     
     .detail
-        margin-top: -20px;
+        margin-top: -15px;
         text-align: left;
+        font-size: 13pt;
+    
+    .skill
+        margin: 5pt;
+        font-size: 11pt;
     
     //vue-carouselの部分
     .VueCarousel
@@ -168,7 +174,7 @@
         font-family: Arial;
         font-size: 24px;
         text-align: center;
-        height: 300px;
+        height: 40vh;
 
     .label
         position: relative;

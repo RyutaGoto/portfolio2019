@@ -22,7 +22,8 @@
 
     .top span
         vertical-align: middle;
-        font-size: 15pt;
+        font-size: 27pt;
+        color: #FFF6F6;
 
 </style>
 

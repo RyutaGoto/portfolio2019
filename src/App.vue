@@ -36,15 +36,26 @@ export default {
 </script>
 
 <style>
+h2{
+  font-size: 30pt;
+  margin-top: 15vh;
+}
+
 .top_out{
   height: 100vh;
   width: 100%;
   display: table;
+  background-color: #39764C;
 }
 
 .top_in{
   display: table-cell;
   vertical-align: middle;
+}
+
+.works{
+  height: 80vh;
+
 }
 
 #app {
@@ -53,7 +64,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  padding: 0px 150px;
+  margin-top: 0px;
+  padding: 0px 0px;
+  background-color: #FFF6F6;
 }
 </style>

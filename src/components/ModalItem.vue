@@ -43,14 +43,14 @@
             background: #fff;
             border-radius: 4px;
             overflow: hidden;
-            width: 70%;
+            width: 50vw;
 
         &-content
-            padding: 10px 20px;
+            padding: 30px 10px;
 
         &-footer
             background: #ccc;
-            padding: 30px;
+            padding: 30px 80px;
             text-align: right;
 
     //オーバーレイのトランジション

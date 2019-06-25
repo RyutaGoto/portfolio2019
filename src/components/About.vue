@@ -34,7 +34,7 @@
         height: 18%;
         width: 18%;
         border-radius: 50%;
-        margin-top: 7vh;
+        margin-top: 3vh;
         margin-bottom: 2vh;
 
     
@@ -53,7 +53,7 @@
         color: #5D5D5D;
 
     .belong
-        margin-top: 30px;    
+        margin-top: 20px;    
 
     .belong p
         font-size: 14pt;
@@ -66,8 +66,10 @@
         font-size: 14pt;
 
     .footer
-        padding: 3rem 1.5rem 3rem;
-        margin-top: 10vh;
+        padding: 2rem 1.5rem 2rem;
+        margin-top: 15vh;
+        background-color: #364F44;
+        color: #FFF5F5;
 
     .title-border
         display: flex;
