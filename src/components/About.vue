@@ -84,12 +84,13 @@
 
     .footer
         padding: 2rem 1.5rem 2rem;
-        margin-top: 12vh;
+        margin-top: 3vh;
         background-color: #325E35;
         color: #FFF5F5;
         font-size: 8pt;
         @media(min-width: 600px)
-                font-size: 12pt;
+            font-size: 12pt;
+            margin-top: 12vh;
 
     .title-border
         display: flex;
