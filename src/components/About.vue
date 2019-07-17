@@ -33,19 +33,23 @@
 <style lang="sass" scoped>
     .about h2
         color: #585858;
-        font-size: 30pt;
-        margin-top: 15vh;
+        font-size: 25pt;
+        margin-top: 5vh;
+        margin-bottom: 3vh;
+        @media(min-width: 600px)
+            font-size: 30pt;
+            margin-top: 15vh;
     
     .prof img
-        height: 18%;
-        width: 18%;
+        height: 35vh;
+        //width: 18%;
         border-radius: 50%;
-        margin-top: 3vh;
         margin-bottom: 2vh;
-
-    
-    h3
-        display: inline;
+        @media(min-width: 600px)
+            height: 18%;
+            width: 18%;
+            margin-top: 3vh;
+            margin-bottom: 2vh;
 
     .about
         height: 100%;
@@ -55,29 +59,37 @@
 
     .name h3
         margin: 5px;
-        font-size: 22pt;
+        font-size: 16pt;
         color: #565656;
+        display: inline;
+        @media(minwidth: 600px)
+            font-size: 22pt;
 
     .belong
         margin-top: 20px;    
-
-    .belong p
-        font-size: 14pt;
-        color: #565656;
+        p
+            font-size: 10pt;
+            color: #565656;
+            @media(min-width: 600px)
+                font-size: 14pt;
         
     .skill
         margin-top: 20px;
         margin-bottom: 40px;
-
-    .skill p
-        font-size: 14pt;
-        color: #565656;
+        p
+            font-size: 10pt;
+            color: #565656;
+            @media(min-width: 600px)
+                font-size: 14pt;
 
     .footer
         padding: 2rem 1.5rem 2rem;
         margin-top: 12vh;
         background-color: #325E35;
         color: #FFF5F5;
+        font-size: 8pt;
+        @media(min-width: 600px)
+                font-size: 12pt;
 
     .title-border
         display: flex;

@@ -123,14 +123,21 @@
 <style lang="sass" scoped>
     .works
         padding-top: 5vh;
-        padding-right: 30vw;
-        padding-left: 30vw;
+        padding-right: 15vw;
+        padding-left: 15vw;
+        @media(min-width: 600px)
+            padding-right: 25vw;
+            padding-left: 25vw;
 
     .works h2
         color: #585858;
-        font-size: 30pt;
-        margin-top: 10vh;
-        margin-bottom: 30px;
+        font-size: 25pt;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        @media(min-width: 600px)
+            font-size: 30pt;
+            margin-top: 10vh;
+            margin-bottom: 30px;
 
     //columnの部分
     .columns

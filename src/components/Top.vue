@@ -18,14 +18,21 @@
 <style lang="sass" scoped>
     .top img
         vertical-align: middle;
-        height: 200px;
-        margin-right: 20px;
+        height: 25vh;
+        margin-bottom: 15px;
+        @media(min-width: 600px)
+            height: 200px;
+            margin-right: 20px;
 
     .top span
+        display: block;
         vertical-align: middle;
-        font-size: 30pt;
         color: #DDDDDD;
-        margin-right: 20px;
+        font-size: 15pt;
+        @media(min-width: 600px)
+            display: inline;
+            font-size: 30pt;
+            margin-right: 20px;
 
 </style>
 

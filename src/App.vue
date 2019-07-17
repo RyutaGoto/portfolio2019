@@ -47,7 +47,7 @@ export default {
 }
 
 .works{
-  height: 80vh;
+  height: 100%;
 
 }
 
