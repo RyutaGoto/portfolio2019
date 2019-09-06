@@ -134,10 +134,7 @@
         font-size: 25pt;
         margin-top: 5vh;
         margin-bottom: 5vh;
-        @media(min-width: 600px)
-            font-size: 30pt;
-            margin-top: 10vh;
-            margin-bottom: 30px;
+        
 
     //columnの部分
     .columns
@@ -159,14 +156,14 @@
 
     //modalの部分
     .title
-        font-size: 26px;
+        font-size: 20px;
         text-align: left;
         //margin-bottom: 3px;
     
     .detail
-        margin-top: -15px;
+        margin-top: -25px;
         text-align: left;
-        font-size: 13pt;
+        font-size: 10pt;
     
     .skill
         margin: 5pt;
@@ -184,7 +181,15 @@
         font-family: Arial;
         font-size: 24px;
         text-align: center;
-        height: 40vh;
+        height: 30vh;
+        margin-bottom: -30px;
+        .VueCarousel-navigation
+        .VueCarousel-pagination
+            display: none;
+            .VueCarousel-dot-container
+                display: none;
+                /deep/ .VueCarousel-dot
+                    display: none;
 
     .label
         position: relative;
@@ -219,5 +224,101 @@
         padding: 0 1rem;
         position: relative;
         cursor: pointer;
+
+    @media(min-width: 600px)
+        .works
+            padding-top: 5vh;
+            padding-right: 15vw;
+            padding-left: 15vw;
+            @media(min-width: 600px)
+                padding-right: 25vw;
+                padding-left: 25vw;
+
+        .works h2
+            color: #585858;
+            font-size: 30pt;
+            margin-top: 10vh;
+            margin-bottom: 30px;
+
+        //columnの部分
+        .columns
+            //background-color: gray;   
+        .column
+            margin: 5px;
+            .item
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+
+        .card
+            padding: 0px 0px;
+            border: none;
+
+        .box
+            padding: 0;
+            box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+
+        //modalの部分
+        .title
+            font-size: 26px;
+            text-align: left;
+            //margin-bottom: 3px;
+        
+        .detail
+            margin-top: -15px;
+            text-align: left;
+            font-size: 13pt;
+        
+        .skill
+            margin: 5pt;
+            font-size: 11pt;
+        
+        //vue-carouselの部分
+        .VueCarousel
+            margin-left: 15%;
+            margin-right: 15%;
+
+        .VueCarousel-slide
+            position: relative;
+            background: white;
+            color: #fff;
+            font-family: Arial;
+            font-size: 24px;
+            text-align: center;
+            height: 40vh;
+
+        .label
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, - 50%);
+            .img
+                height: 100%;
+
+        .header
+            text-align: center;
+            margin-bottom: 1px;
+            padding-top: 15px;
+            background: #fff;
+            height:  50px;
+            min-width: 100%;
+
+        .container
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        
+        .subtitle
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 0 auto;
+            border-radius: 1.2rem;
+            color: #5ebaba;
+            border: 2px solid #5ebaba;
+            background: #ffffff;
+            line-height: 2.4rem;
+            padding: 0 1rem;
+            position: relative;
+            cursor: pointer;
     
 </style>
