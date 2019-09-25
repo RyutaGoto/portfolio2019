@@ -2,20 +2,27 @@
     div.works
         h2 Works
         div.columns.is-multiline.is-centered
-            div.column.is-narrow(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
-                img.item.box(v-bind:src="lamp.img.thum")
-            div.column.is-narrow(v-on:click="openModal(moto.img.item, moto.title, moto.detail, moto.skill)")
-                img.item.box(v-bind:src="moto.img.thum")
-            div.column.is-narrow(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
-                img.item.box(v-bind:src="logo.img.thum")
-            div.column.is-narrow(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
-                img.item.box(v-bind:src="land.img.thum")
-            div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
-                img.item.box(v-bind:src="circuit.img.thum")
-            div.column.is-narrow(v-on:click="openModal(dragonfly.img.item, dragonfly.title, dragonfly.detail, dragonfly.skill)")
-                img.item.box(v-bind:src="dragonfly.img.thum")
             div.column.is-narrow(v-on:click="openModal(gomi.img.item, gomi.title, gomi.detail, gomi.skill)")
                 img.item.box(v-bind:src="gomi.img.thum")
+            div.column.is-narrow(v-on:click="openModal(dragonfly.img.item, dragonfly.title, dragonfly.detail, dragonfly.skill)")
+                img.item.box(v-bind:src="dragonfly.img.thum")
+            div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
+                img.item.box(v-bind:src="circuit.img.thum")
+            div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
+                img.item.box(v-bind:src="circuit.img.thum")
+            div.column.is-narrow(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
+                img.item.box(v-bind:src="land.img.thum")
+            div.column.is-narrow(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
+                img.item.box(v-bind:src="logo.img.thum")
+            div.column.is-narrow(v-on:click="openModal(moto.img.item, moto.title, moto.detail, moto.skill)")
+                img.item.box(v-bind:src="moto.img.thum")
+            div.column.is-narrow(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
+                img.item.box(v-bind:src="lamp.img.thum")
+            
+            
+            
+            
+            
         
 
         //モーダルコンポーネント
