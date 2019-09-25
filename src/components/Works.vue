@@ -8,8 +8,6 @@
                 img.item.box(v-bind:src="dragonfly.img.thum")
             div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
                 img.item.box(v-bind:src="circuit.img.thum")
-            div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
-                img.item.box(v-bind:src="circuit.img.thum")
             div.column.is-narrow(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
                 img.item.box(v-bind:src="land.img.thum")
             div.column.is-narrow(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
