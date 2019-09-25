@@ -5,7 +5,6 @@
                 div.modal-content
                     slot(name="img")
                 footer.modal-footer
-                    //button(v-on:click="confirm(val)") 確認
                     slot#footer(name="footer")
                         button(v-on:click="$emit('close')") Close
 </template>

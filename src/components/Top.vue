@@ -16,23 +16,31 @@
 </script>
 
 <style lang="sass" scoped>
-    .top img
-        vertical-align: middle;
-        height: 25vh;
-        margin-bottom: 15px;
-        @media(min-width: 600px)
-            height: 200px;
-            margin-right: 20px;
+    .top 
+        height: 80vh;
+        padding-top: 10vh;
+        img
+            height: 25vh;
+            margin-bottom: 15px;
 
-    .top span
-        display: block;
-        vertical-align: middle;
-        color: #DDDDDD;
-        font-size: 15pt;
-        @media(min-width: 600px)
-            display: inline;
-            font-size: 30pt;
-            margin-right: 20px;
+        span
+            display: block;
+            vertical-align: middle;
+            color: #DDDDDD;
+            font-size: 15pt;
+                
+    @media(min-width: 600px)
+        .top
+            height: 70vh;
+            padding-top: 20vh;
+            img
+                vertical-align: middle;
+                height: 200px;
+                margin-right: 20px;
+            span
+                display: inline;
+                font-size: 33pt;
+                margin-left: 20px;
 
 </style>
 

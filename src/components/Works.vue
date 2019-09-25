@@ -1,18 +1,22 @@
 <template lang="pug">
     div.works
         h2 Works
-        div.columns
-            div.column(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
+        div.columns.is-multiline.is-centered
+            div.column.is-narrow(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
                 img.item.box(v-bind:src="lamp.img.thum")
-            div.column(v-on:click="openModal(moto.img.item, moto.title, moto.detail, moto.skill)")
+            div.column.is-narrow(v-on:click="openModal(moto.img.item, moto.title, moto.detail, moto.skill)")
                 img.item.box(v-bind:src="moto.img.thum")
-            div.column(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
+            div.column.is-narrow(v-on:click="openModal(logo.img.item, logo.title, logo.detail, logo.skill)")
                 img.item.box(v-bind:src="logo.img.thum")
-        div.columns
-            div.column(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
+            div.column.is-narrow(v-on:click="openModal(land.img.item, land.title, land.detail, land.skill)")
                 img.item.box(v-bind:src="land.img.thum")
-            div.column
-            div.column
+            div.column.is-narrow(v-on:click="openModal(circuit.img.item, circuit.title, circuit.detail, circuit.skill)")
+                img.item.box(v-bind:src="circuit.img.thum")
+            div.column.is-narrow(v-on:click="openModal(dragonfly.img.item, dragonfly.title, dragonfly.detail, dragonfly.skill)")
+                img.item.box(v-bind:src="dragonfly.img.thum")
+            div.column.is-narrow(v-on:click="openModal(gomi.img.item, gomi.title, gomi.detail, gomi.skill)")
+                img.item.box(v-bind:src="gomi.img.thum")
+        
 
         //モーダルコンポーネント
         ModalItem(v-on:close="closeModal" v-if="modal")
@@ -81,6 +85,33 @@
                     detail: '函館市で行われている取り組みの1つに「都市景観賞」というものが存在する。このロゴマークは函館市の都市景観賞のweb制作に携わる一環で制作したものだ。この土地に住む人々の営みの様子を8の字のような循環として表した。色は函館山から見える町並みの色をイメージしながら設計した。',
                     skill: 'Illustrator',
                 },
+                circuit:{
+                    img:{
+                        thum: require('./images/naiLogo/circuit_1.png'),
+                        item: [require('./images/naiLogo/circuit_1.png'), require('./images/naiLogo/circuit_2.png'), ],
+                    },
+                    title: '【ないロゴ】ポップな電子回路',
+                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は高専生向け学習アプリ「Circuit」のロゴである。中学校から進学したばかりの期待に胸を膨らませる高専1年生。線だけで描かれた回路図に退屈しないよう、彼らが楽しみながら学習できるようにとデザインを凝らした。(このアプリは実在するものではありません。)',
+                    skill: 'Illustrator',
+                },
+                dragonfly:{
+                    img:{
+                        thum: require('./images/naiLogo/dragonfly_1.png'),
+                        item: [require('./images/naiLogo/dragonfly_1.png'), require('./images/naiLogo/dragonfly_2.png'), require('./images/naiLogo/dragonfly_3.png'), require('./images/naiLogo/dragonfly_4.png'), ],
+                    },
+                    title: '【ないロゴ】蜻蛉.inc',
+                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は大手航空機メーカー「蜻蛉.inc」のロゴである。これまで不可能とされていた飛行物体における急旋回や急停止といった動きを実現したのが蜻蛉.incである。そのメカニズムには実際の蜻蛉のありとあらゆる動きを参考にしているとかしていないとか…(この会社は実在するものではありません。)',
+                    skill: 'Illustrator',
+                },
+                gomi:{
+                    img:{
+                        thum: require('./images/naiLogo/GomiFes_1.png'),
+                        item: [require('./images/naiLogo/GomiFes_1.png')],
+                    },
+                    title: '【ないロゴ】GOMIBAKO FESTIVAL 2019',
+                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は開催から10年目を迎える「GOMIBAKO FESTIVAL 2019」のロゴマークである。家の中から施設に至るまで様々な場所に存在するゴミ箱。彼らのおかげで私達はゴミにまみれた生活を送らずに済んでいる。このフェスでは我々の生活に多大なる恩恵をもたらすゴミ箱の期限や種類、製造工程などゴミ箱についてより詳しく知れる機会を提供しています。(このイベントは実在するものではありません。)',
+                    skill: 'Illustrator',
+                },
             };
         },
         components: {
@@ -123,11 +154,8 @@
 <style lang="sass" scoped>
     .works
         padding-top: 5vh;
-        padding-right: 15vw;
-        padding-left: 15vw;
-        @media(min-width: 600px)
-            padding-right: 25vw;
-            padding-left: 25vw;
+        padding-right: auto;
+        padding-left: auto;
 
     .works h2
         color: #585858;
@@ -138,21 +166,24 @@
 
     //columnの部分
     .columns
+        width: 100vw;
+        margin: 0;
         //background-color: gray;   
-    .column
-        margin: 5px;
-        .item
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-
-    .card
-        padding: 0px 0px;
-        border: none;
-
-    .box
-        padding: 0;
-        box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+        .column
+            width: 70vw;
+            height: auto;
+            margin: 5px auto;
+            .item
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+            .box
+                padding: 0;
+                box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+                img
+                    width: 90vw;
+                    height: 100%;
+                    object-fit: cover;
 
     //modalの部分
     .title
@@ -228,35 +259,38 @@
     @media(min-width: 600px)
         .works
             padding-top: 5vh;
-            padding-right: 15vw;
-            padding-left: 15vw;
-            @media(min-width: 600px)
-                padding-right: 25vw;
-                padding-left: 25vw;
-
-        .works h2
-            color: #585858;
-            font-size: 30pt;
-            margin-top: 10vh;
-            margin-bottom: 30px;
+            padding-right: auto;
+            padding-left: auto;
+            h2
+                color: #585858;
+                font-size: 30pt;
+                margin-top: 10vh;
+                margin-bottom: 30px;
 
         //columnの部分
-        .columns
-            //background-color: gray;   
-        .column
-            margin: 5px;
-            .item
-                border-radius: 20px;
-                -webkit-border-radius: 20px;
-                -moz-border-radius: 20px;
-
-        .card
-            padding: 0px 0px;
-            border: none;
-
-        .box
-            padding: 0;
-            box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+        .columns 
+            width: 70vw;
+            margin: 0 auto;
+            .column
+                width: 21vw;
+                height: 28vh;
+                margin: 3vh auto;
+                padding: 0;
+                .item
+                    border-radius: 20px;
+                    -webkit-border-radius: 20px;
+                    -moz-border-radius: 20px;
+                .box
+                    padding: 0;
+                    box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+                    margin: 0 auto;
+                img
+                    //width: 20vw;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 21vw;
+                    height: 28vh;
+                    object-fit: cover;
 
         //modalの部分
         .title
