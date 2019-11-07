@@ -16,17 +16,11 @@
                 img.item.box(v-bind:src="moto.img.thum")
             div.column.is-narrow(v-on:click="openModal(lamp.img.item, lamp.title, lamp.detail, lamp.skill)")
                 img.item.box(v-bind:src="lamp.img.thum")
-            
-            
-            
-            
-            
-        
 
         //モーダルコンポーネント
         ModalItem(v-on:close="closeModal" v-if="modal")
             template(slot="img")
-                carousel(:perPage="1" style="margin-top:0.4rem;" :navigationEnabled="true" )
+                carousel(:perPage="1", :navigationEnabled="false", :paginationEnabled="false")
                     slide( v-for="i in imgSrc")
                         span.label
                             img(:src="i")
@@ -114,7 +108,7 @@
                         item: [require('./images/naiLogo/GomiFes_1.png')],
                     },
                     title: '【ないロゴ】GOMIBAKO FESTIVAL 2019',
-                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は開催から10年目を迎える「GOMIBAKO FESTIVAL 2019」のロゴマークである。家の中から施設に至るまで様々な場所に存在するゴミ箱。彼らのおかげで私達はゴミにまみれた生活を送らずに済んでいる。このフェスでは我々の生活に多大なる恩恵をもたらすゴミ箱の期限や種類、製造工程などゴミ箱についてより詳しく知れる機会を提供しています。(このイベントは実在するものではありません。)',
+                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は開催から10年目を迎える「GOMIBAKO FESTIVAL 2019」のロゴマークである。家の中から施設に至るまで様々な場所に存在するゴミ箱。彼らのおかげで私達はゴミにまみれた生活を送らずに済んでいる。このフェスを機会に我々の生活に多大なる恩恵をもたらすゴミ箱の起源や種類などについて触れてみませんか。(このイベントは実在するものではありません。)',
                     skill: 'Illustrator',
                 },
             };
@@ -207,33 +201,35 @@
     
     //vue-carouselの部分
     .VueCarousel
-        margin-left: 15%;
-        margin-right: 15%;
+        width: 100%;
+        //margin-left: 9%;
+        //margin-right: 9%;
+        margin-top: 0px;
+        //height: 230px;
 
-    .VueCarousel-slide
-        position: relative;
-        background: white;
-        color: #fff;
-        font-family: Arial;
-        font-size: 24px;
-        text-align: center;
-        height: 30vh;
-        margin-bottom: -30px;
-        .VueCarousel-navigation
-        .VueCarousel-pagination
-            display: none;
-            .VueCarousel-dot-container
-                display: none;
-                /deep/ .VueCarousel-dot
-                    display: none;
-
-    .label
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, - 50%);
-        .img
-            height: 100%;
+        .VueCarousel-slide
+            width: 100%;
+            height: 34vh;
+            position: relative;
+            background: white;
+            color: #fff;
+            font-family: Arial;
+            font-size: 24px;
+            text-align: center;
+            //height: 33vh;
+            //margin-bottom: -30px;
+            
+            .label
+                //position: relative;
+                //top: 50%;
+                //left: 50%;
+                //transform: translate(-50%, - 50%);
+                width: 100%;
+                height: 34vh;
+                img
+                    width: 100%;
+                    height: 34vh;
+                    object-fit: cover;
 
     .header
         text-align: center;

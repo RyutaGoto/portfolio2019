@@ -43,18 +43,19 @@
             border-radius: 4px;
             overflow: hidden;
             width: 90vw;
-            height: 90vh;
+            height: 85vh;
 
         &-content
-            padding: 20px 5px 0px 5px;;
+            //padding: 20px 5px 0px 5px;;
             margin: 0;
-            height: 45%;
+            height: 40%;
 
         &-footer
             background: #ccc;
             padding: 30px 40px;
+            //margin: 10px 0;
             text-align: right;
-            height: 55%;
+            height: 60%;
             
     //オーバーレイのトランジション
     .modal-enter-active, .modal-leave-active

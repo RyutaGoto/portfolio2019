@@ -18,7 +18,9 @@
 <style lang="sass" scoped>
     .top 
         height: 80vh;
-        padding-top: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img
             height: 25vh;
             margin-bottom: 15px;
