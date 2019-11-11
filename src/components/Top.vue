@@ -33,8 +33,10 @@
                 
     @media(min-width: 600px)
         .top
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 70vh;
-            padding-top: 20vh;
             img
                 vertical-align: middle;
                 height: 200px;

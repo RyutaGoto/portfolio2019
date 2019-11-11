@@ -46,7 +46,6 @@
             height: 85vh;
 
         &-content
-            //padding: 20px 5px 0px 5px;;
             margin: 0;
             height: 40%;
 
@@ -92,14 +91,14 @@
                 background: #fff;
                 border-radius: 4px;
                 overflow: hidden;
-                width: 50vw;
-
+                width: 38vw;
+                height: 90vh;
             &-content
-                padding: 30px 10px;
+                height: 50%;
 
             &-footer
                 background: #ccc;
-                padding: 30px 80px;
+                padding: 30px 50px;
                 text-align: right;
 
         //オーバーレイのトランジション

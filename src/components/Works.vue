@@ -2,6 +2,8 @@
     div.works
         h2 Works
         div.columns.is-multiline.is-centered
+            div.column.is-narrow(v-on:click="openModal(yuki.img.item, yuki.title, yuki.detail, yuki.skill)")
+                img.item.box(v-bind:src="yuki.img.thum")
             div.column.is-narrow(v-on:click="openModal(gomi.img.item, gomi.title, gomi.detail, gomi.skill)")
                 img.item.box(v-bind:src="gomi.img.thum")
             div.column.is-narrow(v-on:click="openModal(dragonfly.img.item, dragonfly.title, dragonfly.detail, dragonfly.skill)")
@@ -77,8 +79,8 @@
                 },
                 land:{
                     img:{
-                        thum: require('./images/land/land_thumnail.jpg'),
-                        item: [require('./images/land/land_1.jpg'), require('./images/land/land_2.jpg'), ],
+                        thum: require('./images/land/land_1.png'),
+                        item: [require('./images/land/land_1.png'), require('./images/land/land_2.png'), require('./images/land/land_3.png'), ],
                     },
                     title: '函館市都市景観章のロゴマーク',
                     detail: '函館市で行われている取り組みの1つに「都市景観賞」というものが存在する。このロゴマークは函館市の都市景観賞のweb制作に携わる一環で制作したものだ。この土地に住む人々の営みの様子を8の字のような循環として表した。色は函館山から見える町並みの色をイメージしながら設計した。',
@@ -109,6 +111,15 @@
                     },
                     title: '【ないロゴ】GOMIBAKO FESTIVAL 2019',
                     detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は開催から10年目を迎える「GOMIBAKO FESTIVAL 2019」のロゴマークである。家の中から施設に至るまで様々な場所に存在するゴミ箱。彼らのおかげで私達はゴミにまみれた生活を送らずに済んでいる。このフェスを機会に我々の生活に多大なる恩恵をもたらすゴミ箱の起源や種類などについて触れてみませんか。(このイベントは実在するものではありません。)',
+                    skill: 'Illustrator',
+                },
+                yuki:{
+                    img:{
+                        thum: require('./images/yuki/yuki_1.png'),
+                        item: [require('./images/yuki/yuki_1.png'), require('./images/yuki/yuki_2.png')],
+                    },
+                    title: '雪んこ茶房のロゴマーク',
+                    detail: '「雪んこ茶房」とはアイドルマスターに関連したツールの制作や、アイドルマスターの話をするために集まった任意団体である。制作するにあたり、「雪」と「茶」を意識し、そこから和を感じてもらえるようなテイストを目指した。',
                     skill: 'Illustrator',
                 },
             };
@@ -151,27 +162,124 @@
 
 
 <style lang="sass" scoped>
+.works
+    padding-top: 5vh;
+    padding-right: auto;
+    padding-left: auto;
+
+.works h2
+    color: #585858;
+    font-size: 25pt;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    
+
+//columnの部分
+.columns
+    width: 100vw;
+    margin: 0;
+    //background-color: gray;   
+    .column
+        width: 70vw;
+        height: auto;
+        margin: 5px auto;
+        .item
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+        .box
+            padding: 0;
+            box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
+            img
+                width: 90vw;
+                height: 100%;
+                object-fit: cover;
+
+//modalの部分
+.title
+    font-size: 20px;
+    text-align: left;
+    //margin-bottom: 3px;
+
+.detail
+    margin-top: -25px;
+    text-align: left;
+    font-size: 10pt;
+
+.skill
+    margin: 5pt;
+    font-size: 11pt;
+
+//vue-carouselの部分
+.VueCarousel
+    width: 100%;
+    margin-top: 0px;
+    .VueCarousel-slide
+        width: 100%;
+        height: 34vh;
+        position: relative;
+        background: white;
+        color: #fff;
+        font-family: Arial;
+        font-size: 24px;
+        text-align: center;
+        //height: 33vh;
+        //margin-bottom: -30px;
+        
+        .label
+            width: 100%;
+            height: 34vh;
+            img
+                width: 100%;
+                height: 34vh;
+                object-fit: cover;
+
+.header
+    text-align: center;
+    margin-bottom: 1px;
+    padding-top: 15px;
+    background: #fff;
+    height:  50px;
+    min-width: 100%;
+
+.container
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+
+.subtitle
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    color: #5ebaba;
+    border: 2px solid #5ebaba;
+    background: #ffffff;
+    line-height: 2.4rem;
+    padding: 0 1rem;
+    position: relative;
+    cursor: pointer;
+
+@media(min-width: 600px)
     .works
         padding-top: 5vh;
         padding-right: auto;
         padding-left: auto;
-
-    .works h2
-        color: #585858;
-        font-size: 25pt;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-        
+        h2
+            color: #585858;
+            font-size: 30pt;
+            margin-top: 10vh;
+            margin-bottom: 30px;
 
     //columnの部分
-    .columns
-        width: 100vw;
-        margin: 0;
-        //background-color: gray;   
+    .columns 
+        width: 65vw;
+        margin: 0 auto;
         .column
-            width: 70vw;
-            height: auto;
-            margin: 5px auto;
+            width: 20vw;
+            height: 30vh;
+            margin: 3vh auto;
+            padding: 0;
             .item
                 border-radius: 20px;
                 -webkit-border-radius: 20px;
@@ -179,21 +287,24 @@
             .box
                 padding: 0;
                 box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
-                img
-                    width: 90vw;
-                    height: 100%;
-                    object-fit: cover;
+                margin: 0 auto;
+            img
+                max-width: 100%;
+                max-height: 100%;
+                width: 20vw;
+                height: 30vh;
+                object-fit: cover;
 
     //modalの部分
     .title
-        font-size: 20px;
+        font-size: 1.4rem;
         text-align: left;
         //margin-bottom: 3px;
     
     .detail
-        margin-top: -25px;
+        font-size: 0.9rem;
+        margin-top: -15px;
         text-align: left;
-        font-size: 10pt;
     
     .skill
         margin: 5pt;
@@ -202,33 +313,21 @@
     //vue-carouselの部分
     .VueCarousel
         width: 100%;
-        //margin-left: 9%;
-        //margin-right: 9%;
-        margin-top: 0px;
-        //height: 230px;
-
         .VueCarousel-slide
-            width: 100%;
-            height: 34vh;
             position: relative;
             background: white;
             color: #fff;
             font-family: Arial;
             font-size: 24px;
             text-align: center;
-            //height: 33vh;
-            //margin-bottom: -30px;
-            
+            width: 100%;
+            height: 45vh;
             .label
-                //position: relative;
-                //top: 50%;
-                //left: 50%;
-                //transform: translate(-50%, - 50%);
                 width: 100%;
-                height: 34vh;
+                height: 45vh;
                 img
                     width: 100%;
-                    height: 34vh;
+                    height: 45vh;
                     object-fit: cover;
 
     .header
@@ -257,103 +356,4 @@
         position: relative;
         cursor: pointer;
 
-    @media(min-width: 600px)
-        .works
-            padding-top: 5vh;
-            padding-right: auto;
-            padding-left: auto;
-            h2
-                color: #585858;
-                font-size: 30pt;
-                margin-top: 10vh;
-                margin-bottom: 30px;
-
-        //columnの部分
-        .columns 
-            width: 70vw;
-            margin: 0 auto;
-            .column
-                width: 21vw;
-                height: 28vh;
-                margin: 3vh auto;
-                padding: 0;
-                .item
-                    border-radius: 20px;
-                    -webkit-border-radius: 20px;
-                    -moz-border-radius: 20px;
-                .box
-                    padding: 0;
-                    box-shadow: 4px 5px 3px rgba(20, 20, 20, 0.2);
-                    margin: 0 auto;
-                img
-                    //width: 20vw;
-                    max-width: 100%;
-                    max-height: 100%;
-                    width: 21vw;
-                    height: 28vh;
-                    object-fit: cover;
-
-        //modalの部分
-        .title
-            font-size: 26px;
-            text-align: left;
-            //margin-bottom: 3px;
-        
-        .detail
-            margin-top: -15px;
-            text-align: left;
-            font-size: 13pt;
-        
-        .skill
-            margin: 5pt;
-            font-size: 11pt;
-        
-        //vue-carouselの部分
-        .VueCarousel
-            margin-left: 15%;
-            margin-right: 15%;
-
-        .VueCarousel-slide
-            position: relative;
-            background: white;
-            color: #fff;
-            font-family: Arial;
-            font-size: 24px;
-            text-align: center;
-            height: 40vh;
-
-        .label
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, - 50%);
-            .img
-                height: 100%;
-
-        .header
-            text-align: center;
-            margin-bottom: 1px;
-            padding-top: 15px;
-            background: #fff;
-            height:  50px;
-            min-width: 100%;
-
-        .container
-            padding-left: 0;
-            padding-right: 0;
-            text-align: center;
-        
-        .subtitle
-            box-sizing: border-box;
-            display: inline-block;
-            margin: 0 auto;
-            border-radius: 1.2rem;
-            color: #5ebaba;
-            border: 2px solid #5ebaba;
-            background: #ffffff;
-            line-height: 2.4rem;
-            padding: 0 1rem;
-            position: relative;
-            cursor: pointer;
-    
 </style>
