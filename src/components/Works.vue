@@ -2,6 +2,8 @@
     div.works
         h2 Works
         div.columns.is-multiline.is-centered
+            div.column.is-narrow(v-on:click="openModal(caravan.img.item, caravan.title, caravan.detail, caravan.skill)")
+                img.item.box(v-bind:src="caravan.img.thum")
             div.column.is-narrow(v-on:click="openModal(yuki.img.item, yuki.title, yuki.detail, yuki.skill)")
                 img.item.box(v-bind:src="yuki.img.thum")
             div.column.is-narrow(v-on:click="openModal(gomi.img.item, gomi.title, gomi.detail, gomi.skill)")
@@ -122,6 +124,15 @@
                     detail: '「雪んこ茶房」とはアイドルマスターに関連したツールの制作や、アイドルマスターの話をするために集まった任意団体である。制作するにあたり、「雪」と「茶」を意識し、そこから和を感じてもらえるようなテイストを目指した。',
                     skill: 'Illustrator',
                 },
+                caravan:{
+                    img:{
+                        thum: require('./images/caravan/caravan_1.png'),
+                        item: [require('./images/caravan/caravan_1.png'), ],
+                    },
+                    title: 'DesignCaravan',
+                    detail: '大学の講義の一環で集まったデザイナー集団「DesignCaravan」の紹介Webサイト。制作にあたってのWebサイトのコンセプトから構造、モックアップ、デザイン、実装、公開に至るまでの一連の作業を行った。写真を日々更新するため、コンテンツの追加を行いやすいように工夫も凝らしてある。',
+                    skill: 'Illustrator, Xd, Nuxt, Pug, Sass, Firebase, Buefy',
+                }
             };
         },
         components: {
