@@ -2,6 +2,10 @@
     div.works
         h2 Works
         div.columns.is-multiline.is-centered
+            div.column.is-narrow(v-on:click="openModal(lixie.img.item, lixie.title, lixie.detail, lixie.skill)")
+                img.item.box(v-bind:src="lixie.img.thum")
+            div.column.is-narrow(v-on:click="openModal(amethyst.img.item, amethyst.title, amethyst.detail, amethyst.skill)")
+                img.item.box(v-bind:src="amethyst.img.thum")            
             div.column.is-narrow(v-on:click="openModal(caravan.img.item, caravan.title, caravan.detail, caravan.skill)")
                 img.item.box(v-bind:src="caravan.img.thum")
             div.column.is-narrow(v-on:click="openModal(yuki.img.item, yuki.title, yuki.detail, yuki.skill)")
@@ -77,7 +81,7 @@
                     },
                     title: '光る電源タップ',
                     detail: '私たちの日常は誰かからの恩恵や、自分を支えてくれる何かによって成り立っていることだろう。例えば蛇口をひねれば水が出たり、お金と引き換えに飲食物が提供されたりと…また、今回行う電子工作に欠かせない電気もその一つであると私は捉えた。このように私たちの日常を支えてくれるために当たり前のように存在しているものを軽視しないでほしいという思いを込めて「当たり前のことを当たり前に思わないように」をコンセプトに本作品の制作に取り組んだ。',
-                    skill: 'Arduino 電子工作',
+                    skill: 'Arduino, 電子工作',
                 },
                 land:{
                     img:{
@@ -132,6 +136,24 @@
                     title: 'DesignCaravan',
                     detail: '大学の講義の一環で集まったデザイナー集団「DesignCaravan」の紹介Webサイト。制作にあたってのWebサイトのコンセプトから構造、モックアップ、デザイン、実装、公開に至るまでの一連の作業を行った。写真を日々更新するため、コンテンツの追加を行いやすいように工夫も凝らしてある。',
                     skill: 'Illustrator, Xd, Nuxt, Pug, Sass, Firebase, Buefy',
+                },
+                amethyst:{
+                    img:{
+                        thum: require('./images/naiLogo/amethyst_1.png'),
+                        item: [require('./images/naiLogo/amethyst_1.png'), require('./images/naiLogo/amethyst_2.png'), require('./images/naiLogo/amethyst_3.png')]
+                    },
+                    title: '【ないロゴ】Amethyst',
+                    detail: '実在しない団体やサービス、物語などを想像しながら作るロゴマーク。今回は銀河間を股にかけて活動している停戦監視団「Amethyst」のロゴマークである。西暦3020年、人類の争いは舞台は地球から宇宙に移った。正義とはいつの時代も自身の何かしらに対する愛から芽生える。この愛に溺れ、本来の目的を見失った権力を鎮めるために停戦監視団「Amethyst」はその力を行使する。',
+                    skill: 'Illustrator'
+                },
+                lixie:{
+                    img:{
+                        thum: require('./images/lixie/lixie_thumnail.png'),
+                        item: [require('./images/lixie/lixie_1.png'), require('./images/lixie/lixie_2.png'), require('./images/lixie/lixie_3.png'), require('./images/lixie/lixie_4.png'), require('./images/lixie/lixie_5.png')]
+                    },
+                    title: 'LIXIE',
+                    detail: '1960 年代までかつて数字や文字を表示するためのデバイスとして世界的に量産されていたニキシー管、その特性ゆえの寿命の短さや高電圧を必要とするためLED の登場と共に衰退の一途を辿った。本作品はそのニキシー管を模してアクリル板とLEDで表現した先駆者のオマージュ作品である。',
+                    skill: 'Illustrator, Arduino, 電子工作'
                 }
             };
         },
